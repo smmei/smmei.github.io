@@ -5,7 +5,7 @@ categories: openwrt
 ---
 买了一个极1s。拆机之后，焊上UART，便可以看到它里面的信息了。
 
-![极1s主板](/_assets/hc5661.jpg)
+![极1s主板](/assets/hi5661.jpg)
 
 ## 硬件配置
 * CPU: MT7620A
