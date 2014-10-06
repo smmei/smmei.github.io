@@ -6,7 +6,7 @@ category: tools
 
 折腾了一整天，最后还是从头开始。觉得这样比较干净一点。
 
-jekyllcn](http://jekyllcn.com/)是一个jekyll的中文翻译。我就是按照它上面的说明来做的。
+[jekyllcn](http://jekyllcn.com/)是一个jekyll的中文翻译。我就是按照它上面的说明来做的。
 
 还有几个东西没搞好：
 
