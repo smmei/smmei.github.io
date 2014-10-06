@@ -2,7 +2,7 @@
 title: Sam's blog
 email: shaoming.mei#gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  go big or go home.
+  一只特立独行的猪
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "smmei.github.com" # the base hostname & protocol for your site
 twitter_username:
