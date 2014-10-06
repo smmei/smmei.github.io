@@ -18,16 +18,13 @@ category: tools
 
 ## quilt的安装
 
+```sh
 sudo apt-get install quilt
-
-quilt本身是一个脚本，上面这一句把它安装于/usb/bin/quilt
-
-quilt 的执行方式是：
-
-> quilt command ...
-
-command有如下选择:
 ```
+
+quilt本身是一个脚本，上面这一句把它安装于/usb/bin/quilt. quilt 的执行方式是：`quilt command ...`，command有如下选择:
+
+```sh
 add       fold    new       remove    top
 annotate  fork    next      rename    unapplied
 applied   graph   patches   revert    upgrade
@@ -42,38 +39,21 @@ files     mail    refresh   snapshot
 ## quilt基本使用
 
 * test目录下有两个文件file1.c file1.h
-
-* 创建一个新patch
-
-	quilt new 0001-test.patch
-
-* 把文件加入到topmost patch
-
-	quilt add file1.c
+* 创建一个新patch : `quilt new 0001-test.patch`
+* 把文件加入到topmost patch : `quilt add file1.c`
 
 接下来对int.c的修改都会记录到topmost patch中去。
 
-* 编辑文件
-使用编辑器修改源文件，也可以调用quilt的默认编译器来修改int.c。
-
-	quilt edit file1.c
-
-* 更新topmost patch
-
-	quilt refresh
+* 编辑文件，使用编辑器修改源文件，也可以调用quilt的默认编译器来修改 : `quilt edit file1.c`
+* 更新topmost patch : `quilt refresh`
 
 使用了这条命令之后，修改才会写入到0001-test.patch中
 
-* 继续新建一个patch
+* 继续新建一个patch : `quilt new 0002-test.patch`
 
-	quilt new 0002-test.patch
+此时topmost变成了0002-test.patch。现在使用`quilt files`查看，此patch下没有跟踪文件
 
-此时topmost变成了0002-test.patch。
-现在使用`quilt files`查看，此patch下没有跟踪文件
-
-* 添加两个文件file1.c file1.h
-
-	quilt add file1.c file1.h
+* 添加两个文件file1.c file1.h : `quilt add file1.c file1.h`
 
 现在使用`quilt files`查看，此patch跟踪了两个文件。编辑它们。
 
@@ -81,21 +61,25 @@ files     mail    refresh   snapshot
 
 回退到某个patch
 
+```sh
 	$ quilt pop 0001-test.patch 
 	Removing patch 0002-test.patch
 	Restoring file1.c
 	Restoring file1.h
 	
 	Now at patch 0001-test.patch
+```
 
 这个命令之后，0001-test.patch将变为topmost patch。所有的修改退回到这个点上。
 
+```sh
 	$ quilt push 0002-test.patch 
 	Applying patch 0002-test.patch
 	patching file file1.c
 	patching file file1.h
 	
 	Now at patch 0002-test.patch
+```
 
 push命令使用0002-test.patch。
 
